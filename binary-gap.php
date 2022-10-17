@@ -5,7 +5,7 @@
 function solution($n)
 {
     $str = decbin($n);
-
+    $str = trim($str, '0');
     $startIdx = strpos($str, "1");
     $endIdx = strrpos($str, "1");
 
@@ -33,7 +33,7 @@ function solution($n)
     return $len;
 }
 
-foreach ([1, 2, 147, 483, 647] as $v) {
+foreach ([1,6, 2, 147, 483, 647] as $v) {
     echo $v . ' -> ' . decbin($v) . ' -> ' . solution($v);
     echo "\n";
 }
